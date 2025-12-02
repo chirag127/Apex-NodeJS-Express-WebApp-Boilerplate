@@ -1,0 +1,31 @@
+badges:
+  - name: Build Status
+    url: https://github.com/chirag127/Express-Kickstart-NodeJS-Web-App-Template/actions/workflows/ci.yml
+    icon: github
+    color: brightgreen
+    style: flat-square
+  - name: Coverage
+    url: https://codecov.io/github/chirag127/Express-Kickstart-NodeJS-Web-App-Template
+    icon: codecov
+    color: brightgreen
+    style: flat-square
+  - name: Tech Stack
+    url: https://github.com/chirag127/Express-Kickstart-NodeJS-Web-App-Template
+    icon: nodejs
+    color: green
+    style: flat-square
+  - name: License
+    url: https://github.com/chirag127/Express-Kickstart-NodeJS-Web-App-Template/blob/main/LICENSE
+    icon: 'cc-by-nc'
+    color: lightgray
+    style: flat-square
+  - name: GitHub Stars
+    url: https://github.com/chirag127/Express-Kickstart-NodeJS-Web-App-Template
+    icon: github
+    color: yellow
+    style: flat-square
+  - name: Linter
+    url: https://github.com/chirag127/Express-Kickstart-NodeJS-Web-App-Template
+    icon: biome
+    color: orange
+    style: flat-square
