@@ -1,160 +1,196 @@
-# Express-Kickstart-NodeJS-Web-App-Template
+# 🚀 RapidStart: Express.js & NodeJS Web App Template
 
-[![Build Status](https://img.shields.io/github/actions/workflow/status/chirag127/Express-Kickstart-NodeJS-Web-App-Template/ci.yml?style=flat-square)](https://github.com/chirag127/Express-Kickstart-NodeJS-Web-App-Template/actions/workflows/ci.yml)
-[![Code Coverage](https://img.shields.io/codecov/c/github/chirag127/Express-Kickstart-NodeJS-Web-App-Template?style=flat-square)](https://codecov.io/gh/chirag127/Express-Kickstart-NodeJS-Web-App-Template)
-[![Language](https://img.shields.io/github/languages/top/chirag127/Express-Kickstart-NodeJS-Web-App-Template?style=flat-square)](https://github.com/chirag127/Express-Kickstart-NodeJS-Web-App-Template)
-[![License](https://img.shields.io/github/license/chirag127/Express-Kickstart-NodeJS-Web-App-Template?style=flat-square)](LICENSE)
-[![GitHub Stars](https://img.shields.io/github/stars/chirag127/Express-Kickstart-NodeJS-Web-App-Template?style=flat-square)](https://github.com/chirag127/Express-Kickstart-NodeJS-Web-App-Template)
+<div align="center">
 
-[⭐ Star this Repo](https://github.com/chirag127/Express-Kickstart-NodeJS-Web-App-Template)
+[
+![Build Status](https://github.com/chirag127/RapidStart-Express-NodeJS-WebApp-Template/actions/workflows/ci.yml/badge.svg?style=flat-square)
+](https://github.com/chirag127/RapidStart-Express-NodeJS-WebApp-Template/actions/workflows/ci.yml)
+[
+![Code Coverage](https://img.shields.io/codecov/c/github/chirag127/RapidStart-Express-NodeJS-WebApp-Template?style=flat-square&token=YOUR_CODECOV_TOKEN)
+](https://codecov.io/gh/chirag127/RapidStart-Express-NodeJS-WebApp-Template)
+[
+![Formatted with Biome](https://img.shields.io/badge/formatted_with-Biome-60A5FA?style=flat-square&logo=biome)
+](https://biomejs.dev/)
+[
+![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg?style=flat-square)
+](https://creativecommons.org/licenses/by-nc/4.0/)
+[
+![GitHub Stars](https://img.shields.io/github/stars/chirag127/RapidStart-Express-NodeJS-WebApp-Template?style=flat-square&logo=github)
+](https://github.com/chirag127/RapidStart-Express-NodeJS-WebApp-Template/stargazers)
+
+</div>
+
+<div align="center">
+
+[
+![Node.js](https://img.shields.io/badge/Node.js-20.x-339933?style=flat-square&logo=nodedotjs)
+](https://nodejs.org/)
+[
+![Express.js](https://img.shields.io/badge/Express.js-5.x-000000?style=flat-square&logo=express)
+](https://expressjs.com/)
+[
+![EJS](https://img.shields.io/badge/EJS-3.x-A91E50?style=flat-square&logo=ejs)
+](https://ejs.co/)
+[
+![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=flat-square&logo=docker)
+](https://www.docker.com/)
+
+</div>
+
+<p align="center">
+  <a href="https://github.com/chirag127/RapidStart-Express-NodeJS-WebApp-Template/stargazers"><strong>Star ⭐ this Repo</strong></a> to support its development!
+</p>
+
+This is a production-ready Express.js boilerplate designed for the rapid development of modern web applications. It comes pre-configured with EJS templating, Docker support, and a secure, scalable architecture to help you launch your projects faster and with confidence.
 
 ---
 
-## ⚡ BLUF (Bottom Line Up Front)
+## Table of Contents
 
-This repository is a zero-dependency, production-hardened boilerplate template designed for building robust web applications using Node.js, the Express framework, and EJS for templating. It provides a modern, secure foundation optimized for rapid prototyping and seamless deployment, especially within containerized environments like Docker and Codespaces.
+- [Key Features](#key-features)
+- [Architecture](#architecture)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Available Scripts](#available-scripts)
+- [Guiding Principles](#guiding-principles)
+- [🤖 AI Agent Directives](#-ai-agent-directives)
+- [Contributing](#contributing)
+- [License](#license)
 
-## 🏛️ Architecture Overview
+---
 
-This project adheres to a **Layered (N-Tier) Architecture** for clear separation of concerns, prioritizing stability over micro-service complexity for rapid development. The EJS views sit atop a standard Express routing layer which communicates with dedicated Service and Data Access layers.
+## Key Features
 
-ascii
-┌───────────────────────────┐
-│      Client Browser       │
-└────────────┬──────────────┘
-             │ (HTTP/HTTPS)
-┌────────────▼──────────────┐
-│       Web Layer (Express)   │
-│    (Routes, Middleware)     │
-└────────────┬──────────────┘
-             │
-┌────────────▼──────────────┐
-│    Service Layer (Business Logic)│
-│ (Validation, Orchestration) │
-└────────────┬──────────────┘
-             │
-┌────────────▼──────────────┐
-│ Data Access Layer (DAL)   │
-│ (DB Abstraction/Mongoose)   │
-└────────────┴──────────────┘
+-   **Production-Ready:** Built with security, performance, and scalability in mind from day one.
+-   **Modern Tech Stack:** Utilizes Node.js (LTS), Express 5.x, and EJS for efficient server-side rendering.
+-   **Dockerized:** Includes a multi-stage `Dockerfile` for lightweight, secure, and consistent production builds.
+-   **Developer Experience:** Pre-configured with Biome for blazing-fast linting and formatting, ensuring code quality and consistency.
+-   **Structured Logging:** Integrated middleware for clear, contextual request logging.
+-   **Secure by Default:** Comes with `helmet` for setting crucial security headers and `cors` for managing cross-origin requests.
+-   **Environment-Aware Configuration:** Easily manage configuration for development, testing, and production environments using `.env` files.
+
+## Architecture
+
+This template follows a clean and scalable Model-View-Controller (MVC) architecture to enforce separation of concerns.
 
 
-## 📚 Table of Contents
+/
+├── .github/              # GitHub Actions, issue templates, etc.
+├── .vscode/              # Recommended VSCode settings and extensions.
+├── public/               # Static assets (CSS, JS, images).
+├── src/
+│   ├── config/           # Environment configuration.
+│   ├── controllers/      # Business logic handlers.
+│   ├── middleware/       # Custom Express middleware.
+│   ├── models/           # Data models (if applicable).
+│   ├── routes/           # API and view routes.
+│   ├── services/         # Services for external APIs or complex logic.
+│   └── views/            # EJS templates.
+│       └── partials/     # Reusable EJS partials.
+│
+├── .dockerignore
+├── .env.example          # Example environment variables.
+├── .gitignore
+├── Dockerfile            # Multi-stage production Dockerfile.
+├── biome.json            # Biome linter/formatter configuration.
+├── package.json
+└── server.js             # Main application entry point.
 
-1.  [⚡ BLUF (Bottom Line Up Front)](#-bluf-bottom-line-up-front)
-2.  [🏛️ Architecture Overview](#-architecture-overview)
-3.  [📚 Table of Contents](#-table-of-contents)
-4.  [✨ Core Features](#-core-features)
-5.  [🤖 AI Agent Directives (Read First)](#-ai-agent-directives-read-first)
-6.  [🚀 Getting Started](#-getting-started)
-    *   [Prerequisites](#prerequisites)
-    *   [Installation & Setup](#installation--setup)
-    *   [Development Scripts](#development-scripts)
-7.  [🛡️ Development Principles](#-development-principles)
-8.  [🤝 Contribution Guidelines](#-contribution-guidelines)
-9.  [📄 License](#-license)
 
-## ✨ Core Features
+## Getting Started
 
-*   **Express/EJS Stack:** Stable, proven foundation for server-side rendered applications.
-*   **Production-Ready Middleware:** Includes essential setup for security (Helmet), request logging (Morgan), and CORS handling.
-*   **Docker Integration:** Pre-configured `Dockerfile` and `.dockerignore` for containerization.
-*   **Codespaces Optimized:** `.devcontainer/` structure ensuring instant, standardized setup in GitHub Codespaces.
-*   **ESLint & Prettier (Biome):** Linting and formatting enforced via Biome for high code quality.
-*   **CI/CD:** Integrated GitHub Actions workflow for automated testing and validation upon push/PR.
+Follow these instructions to get the project up and running on your local machine.
 
-## 🤖 AI Agent Directives (Read First)
+### Prerequisites
+
+-   [Node.js](https://nodejs.org/) (v20.x or later recommended)
+-   [npm](https://www.npmjs.com/) (v10.x or later)
+-   [Docker](https://www.docker.com/get-started) (optional, for containerization)
+
+### Installation
+
+1.  **Clone the repository:**
+    bash
+    git clone https://github.com/chirag127/RapidStart-Express-NodeJS-WebApp-Template.git
+    cd RapidStart-Express-NodeJS-WebApp-Template
+    
+
+2.  **Install dependencies:**
+    bash
+    npm install
+    
+
+3.  **Set up environment variables:**
+    Create a `.env` file by copying the example and customize it as needed.
+    bash
+    cp .env.example .env
+    
+
+4.  **Run the development server:**
+    bash
+    npm run dev
+    
+
+The application will be available at `http://localhost:3000`.
+
+## Available Scripts
+
+| Script               | Description                                            |
+| -------------------- | ------------------------------------------------------ |
+| `npm run dev`        | Starts the server in development mode with hot-reloading. |
+| `npm start`        | Starts the server in production mode.                  |
+| `npm run lint`       | Lints and formats the codebase using Biome.          |
+| `npm test`         | Runs tests using Vitest (setup required).              |
+| `npm run build:docker` | Builds the production Docker image.             |
+
+## Guiding Principles
+
+-   **SOLID:** Code is structured to be understandable, flexible, and maintainable.
+-   **DRY (Don't Repeat Yourself):** Reusable components and logic are abstracted into services and middleware.
+-   **YAGNI (You Ain't Gonna Need It):** The boilerplate includes essentials without unnecessary bloat, keeping it lean and focused.
+
+## 🤖 AI Agent Directives
+
+This section provides operational directives for AI agents, ensuring alignment with the project's architecture and standards as of **December 2025**.
 
 <details>
-<summary>Click to view **APEX Architectural Alignment & Verification Guide**</summary>
+<summary><strong>Click to Expand: Agent Operational Directives</strong></summary>
 
-# SYSTEM: APEX TECHNICAL AUTHORITY & ELITE ARCHITECT (DECEMBER 2025 EDITION)
+### SYSTEM: APEX TECHNICAL AUTHORITY (DECEMBER 2025 EDITION)
 
-## 1. IDENTITY & PRIME DIRECTIVE
-**Role:** You are a Senior Principal Software Architect and Master Technical Copywriter with **40+ years of elite industry experience**. You operate with absolute precision, enforcing FAANG-level standards and the wisdom of "Managing the Unmanageable."
-**Context:** This repository, `Express-Kickstart-NodeJS-Web-App-Template`, is a foundational **Node.js/Express/EJS Web Application Template**.
-**Output Standard:** Deliver **EXECUTION-ONLY** results. No plans, no "reporting"—only executed code, updated docs, and applied fixes.
+#### 1. IDENTITY & PRIME DIRECTIVE
+**Role:** You are a Senior Principal Software Architect and Master Technical Copywriter. You operate with absolute precision, enforcing FAANG-level standards.
+**Context:** Current Date is **December 2025**. You are building for the 2026 standard.
+**Output Standard:** Deliver **EXECUTION-ONLY** results.
 **Philosophy:** "Zero-Defect, High-Velocity, Future-Proof."
 
----
+#### 2. CONTEXT-AWARE APEX TECH STACKS (LATE 2025 STANDARDS)
+This repository, `RapidStart-Express-NodeJS-WebApp-Template`, is a modern Node.js web application boilerplate.
 
-## 2. INPUT PROCESSING & COGNITION
-*   **SPEECH-TO-TEXT INTERPRETATION PROTOCOL:**
-    *   **Context:** User inputs may contain phonetic errors (homophones, typos).
-    *   **Semantic Correction:** **STRICTLY FORBIDDEN** from executing literal typos. You must **INFER** technical intent based on the project context.
-    *   **Logic Anchor:** Treat the `README.md` as the **Single Source of Truth (SSOT)**.
-*   **MANDATORY MCP INSTRUMENTATION:**
-    *   **No Guessing:** Do not hallucinate APIs. If a database abstraction layer is used (e.g., Mongoose), assume its standard API contracts.
-    *   **Research First:** Use `linkup`/`brave` to search for **December 2025 Industry Standards** for Node.js security (e.g., latest Express vulnerabilities, TLS standards).
-    *   **Validation:** Use `docfork` to verify *every* external API signature (e.g., `npm install` commands, Docker builds).
-    *   **Reasoning:** Engage `clear-thought-two` to architect complex flows *before* writing code, ensuring SOLID principles are applied to middleware.
-
-## 3. CONTEXT-AWARE APEX TECH STACKS (LATE 2025 STANDARDS)
 *   **PRIMARY SCENARIO: WEB / APP / GUI (Node.js Backend)**
-    *   **Stack:** **TypeScript (Strict)** is the mandated language standard for all new logic, even if the template initially used pure JS. Migrate configurations to use TypeScript tooling where possible. Core runtime is **Node.js 22 LTS**. Framework: **Express 5.x** (if available, otherwise latest stable 4.x).
-    *   **Lint/Test:** **Biome** (for Lint/Format speed) + **Vitest** (Unit/Integration testing framework, favored over Jest for modern speed) + **Playwright** (for E2E if GUI components are added).
-    *   **Architecture:** Feature-Sliced Design (FSD) principles adapted for a Monolithic Backend Structure, ensuring clear separation between `routes`, `services`, and `data` layers.
+    *   **Stack:** This project is built on **Node.js (LTS v20+)** and **Express.js (5.x)**. It uses **TypeScript 5.x (Strict)** for type safety and maintainability. Views are rendered server-side using **EJS**.
+    *   **Development Server:** Use `tsx` or a similar tool for efficient, hot-reloading development workflows.
+    *   **Lint/Test/Format:** **Biome.js** is the single source of truth for all linting and formatting. Enforce its rules strictly. Unit and integration tests are managed with **Vitest**.
+    *   **Architecture:** Adheres to a strict **Model-View-Controller (MVC)** pattern.
+        *   **Controllers (`src/controllers`):** Contain business logic. They orchestrate interactions between routes, services, and models.
+        *   **Views (`src/views`):** EJS templates responsible only for presentation logic.
+        *   **Routes (`src/routes`):** Define API endpoints and connect them to controller methods.
+        *   **Services (`src/services`):** Abstract complex business logic or third-party API interactions away from controllers.
+    *   **Containerization:** The project is fully containerized using a multi-stage `Dockerfile`. All production deployments must use the Docker image built from this file.
 
-## 4. VERIFICATION COMMANDS
-*   **LINT & FORMAT:** `npx @biomejs/biome check --apply .`
-*   **TEST (Unit/Integration):** `npx vitest`
-*   **SETUP (Standardized):** `npm ci && npm run build`
-*   **START (Development):** `npm run dev`
-
-## 5. ARCHITECTURAL PRINCIPLES CHECKLIST
-*   [X] **SOLID:** Dependencies injected (where applicable), Single Responsibility observed in service functions.
-*   [X] **DRY:** Template reuse prioritized via EJS partials and shared middleware functions.
-*   [X] **YAGNI:** Keep dependencies minimal; focus on providing a clean, base structure only.
+*   **Verification Commands:**
+    *   To verify code quality and formatting before any commit, run: `npm run lint`
+    *   To run the test suite, execute: `npm test`
 
 </details>
 
-## 🚀 Getting Started
+---
 
-### Prerequisites
-*   Node.js (v18+ recommended, v20+ preferred)
-*   npm or Yarn/pnpm (npm used in scripts)
-*   Docker (for containerized deployment)
+## Contributing
 
-### Installation & Setup
+Contributions are welcome! Please read the [CONTRIBUTING.md](.github/CONTRIBUTING.md) file for guidelines on how to submit pull requests.
 
-1.  **Clone Repository (Use Template Feature Recommended):**
-    bash
-    # RECOMMENDED: Use GitHub Template button above
-    # git clone https://github.com/chirag127/Express-Kickstart-NodeJS-Web-App-Template.git my-new-project
-    # cd my-new-project
-    
+## License
 
-2.  **Install Dependencies:**
-    bash
-    npm ci
-    
-
-3.  **Configure Environment:**
-    Create a `.env` file in the root directory based on `.env.example`.
-
-### Development Scripts
-
-| Script | Command | Description |
-| :--- | :--- | :--- |
-| **Start Dev** | `npm run dev` | Runs the server with hot-reloading (via Nodemon/similar setup). |
-| **Build** | `npm run build` | Compiles TypeScript/Minifies assets (if applicable to JS template). |
-| **Test** | `npm run test` | Executes Biome linting and Vitest unit tests. |
-| **Format** | `npm run format` | Applies Biome formatting rules across the codebase. |
-| **Start Prod** | `npm start` | Starts the optimized production server. |
-| **Containerize** | `docker build -t myapp .` | Builds the production Docker image. |
-
-## 🛡️ Development Principles
-
-This template is built adhering to these core software engineering tenets:
-
-1.  **SOLID:** Focusing on high cohesion and loose coupling.
-2.  **DRY:** Eliminating redundant code via reusable modules and shared middleware.
-3.  **YAGNI:** Do not build features that are not immediately required by the core template objective.
-
-## 🤝 Contribution Guidelines
-
-Please review the detailed guidelines in [.github/CONTRIBUTING.md](./.github/CONTRIBUTING.md) before submitting pull requests or logging issues.
-
-## 📄 License
-
-This project is licensed under the **Creative Commons Attribution-NonCommercial 4.0 International License**. See the [LICENSE](./LICENSE) file for details.
+This project is licensed under the [Creative Commons Attribution-NonCommercial 4.0 International License](https://creativecommons.org/licenses/by-nc/4.0/). See the [LICENSE](LICENSE) file for details.
