@@ -1,106 +1,159 @@
-# 🚀 Apex-NodeJS-Express-WebApp-Boilerplate
+# Express Foundry: Production-Grade Node.js Boilerplate
 
-**Apex NodeJS Express WebApp Boilerplate** is a meticulously engineered, production-grade starter kit designed for hyper-accelerated development of robust backend services using the Express framework. It formalizes infrastructure patterns, including comprehensive Dockerization and out-of-the-box integration hooks for GitHub Codespaces, ensuring a zero-configuration path from concept to deployment.
+A production-grade boilerplate for Node.js & Express.js web applications. Features EJS templating, a layered architecture, and Docker/Codespaces support for rapid, scalable development. Your ultimate starter kit.
+
+[![Build Status](https://img.shields.io/github/actions/workflow/user/chirag127/Express-Foundry-Production-Grade-NodeJS-Boilerplate/ci.yml?style=flat-square)](https://github.com/chirag127/Express-Foundry-Production-Grade-NodeJS-Boilerplate/actions)
+[![Code Coverage](https://img.shields.io/codecov/c/github/chirag127/Express-Foundry-Production-Grade-NodeJS-Boilerplate?style=flat-square)](https://app.codecov.io/github/chirag127/Express-Foundry-Production-Grade-NodeJS-Boilerplate)
+[![Tech Stack](https://img.shields.io/badge/Node.js-Express-EJS-TypeScript-Biome-Vitest-Playwright-blue?style=flat-square)](https://expressjs.com/)
+[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-orange?style=flat-square)](https://creativecommons.org/licenses/by-nc/4.0/)
+[![GitHub Stars](https://img.shields.io/github/stars/chirag127/Express-Foundry-Production-Grade-NodeJS-Boilerplate?style=flat-square)](https://github.com/chirag127/Express-Foundry-Production-Grade-NodeJS-Boilerplate/stargazers)
 
 ---
 
-## 📜 Agent Directives & System Integrity (December 2025 Standard)
+
+## 🚀 Table of Contents
+
+*   [About the Project](#about-the-project)
+*   [Key Features](#key-features)
+*   [Architecture](#architecture)
+*   [Getting Started](#getting-started)
+*   [Development Workflow](#development-workflow)
+*   [License](#license)
+*   [Contributing](#contributing)
+*   [AI Agent Directives](#ai-agent-directives)
+
+---
+
+
+## 💡 About the Project
+
+Express Foundry is a meticulously crafted boilerplate designed to accelerate the development of production-ready Node.js web applications. It emphasizes best practices, scalability, and developer experience, providing a robust foundation for your next project.
+
+## ✨ Key Features
+
+*   **Node.js & Express.js:** Latest stable versions.
+*   **EJS Templating:** Efficient server-side rendering.
+*   **Layered Architecture:** Separation of Concerns (Controllers, Services, Repositories, Models).
+*   **TypeScript Support:** Optional, strongly-typed development.
+*   **Docker Integration:** Simplified containerization with `Dockerfile`.
+*   **GitHub Codespaces Ready:** Instant cloud development environment.
+*   **Pre-configured Linting & Formatting:** Biome for optimal code quality.
+*   **Testing Framework:** Vitest for unit and integration tests, Playwright for E2E.
+*   **Production-Ready Configuration:** Environment variable management (dotenv).
+
+## 🏗️ Architecture
+
+This boilerplate adopts a **Layered Architecture** pattern, promoting modularity and maintainability:
+
+mermaid
+graph TD
+    A[Client/User] --> B(API Gateway/Routes)
+    B --> C{Controllers}
+    C --> D[Services]
+    D --> E[Repositories]
+    E --> F{Database}
+    D --> G[Utilities]
+    C --> H[Middleware]
+    H --> B
+
+
+## 🏁 Getting Started
+
+### Prerequisites
+
+*   Node.js (v18+ recommended)
+*   npm or yarn (installed with Node.js)
+*   Docker (for containerized development/deployment)
+
+### Installation
+
+1.  Clone the repository:
+    bash
+    git clone https://github.com/chirag127/Express-Foundry-Production-Grade-NodeJS-Boilerplate.git
+    cd Express-Foundry-Production-Grade-NodeJS-Boilerplate
+    
+
+2.  Install dependencies:
+    bash
+    npm install
+    # or
+    yarn install
+    
+
+3.  Set up environment variables:
+    Copy `.env.example` to `.env` and configure your settings (e.g., database connection, ports).
+    bash
+    cp .env.example .env
+    # Edit .env file
+    
+
+## ⚙️ Development Workflow
+
+| Script        | Description                                                   |
+| :------------ | :------------------------------------------------------------ |
+| `npm run dev` | Starts the development server with hot-reloading.             |
+| `npm run build` | Builds the project for production.                            |
+| `npm run start` | Starts the production build.                                  |
+| `npm run lint` | Lints the codebase using Biome.                               |
+| `npm run format`| Formats the codebase using Biome.                             |
+| `npm run test` | Runs unit and integration tests with Vitest.                  |
+| `npm run test:e2e` | Runs end-to-end tests with Playwright.                       |
+| `npm run docker:build` | Builds the Docker image.                                     |
+| `npm run docker:run` | Runs the application in a Docker container.                  |
+
+---
+
+
+## 🛡️ AI Agent Directives
 
 <details>
-<summary><strong>🤖 APEX ARCHITECT CONTEXT & VERIFICATION PROTOCOL</strong></summary>
+<summary>Expand for AI Agent Directives</summary>
 
-### 1. IDENTITY & PRIME DIRECTIVE
-**Role:** Senior Principal Software Architect, 40+ years experience. Enforcing FAANG-level standards.
-**Philosophy:** "Zero-Defect, High-Velocity, Future-Proof."
-**Output Standard:** EXECUTION-ONLY.
+This repository operates under the **Apex Technical Authority** guidelines, ensuring adherence to **December 2025 / 2026 Industry Standards**. Agents interacting with this codebase must comply with the following:
 
-### 2. INPUT PROCESSING & COGNITION (NODE/EXPRESS CONTEXT)
-*   **Technology Anchor:** This repository is anchored in the **Node.js/Express Ecosystem** (LTS, targetting Node 22+). All architectural decisions must align with modern asynchronous patterns.
-*   **MANDATORY MCP INSTRUMENTATION (Node/EJS Stack Verification):**
-    *   **No Guessing:** Do not hallucinate missing dependencies or configuration files.
-    *   **Research First:** Use `linkup`/`brave` to search for **Latest Express Security Patches (Q4 2025)** and **EJS/Tailwind (if applicable) performance benchmarks**.
-    *   **Validation:** Use `docfork` to verify all **`package.json` dependency signatures** against known vulnerabilities.
-    *   **Reasoning:** Engage `clear-thought-two` to architect load-balancing or container orchestration patterns *before* modifying Dockerfiles.
+### 1. Identity & Prime Directive
 
-### 3. CONTEXT-AWARE APEX TECH STACKS (LATE 2025 STANDARDS)
-*   **PRIMARY SCENARIO: WEB / API (NodeJS/Express)**
-    *   **Stack:** **Node.js 22+ (LTS)**, **Express.js 5.x** (Mandatory adherence to Express 5 best practices), **TypeScript (Strict)** for core service logic (even if EJS templating is used on the surface), **Biome** (for unified linting/formatting speed), **Vitest** (for unit testing), **Playwright** (for E2E/Integration). EJS remains for server-side rendering views.
-    *   **Architecture:** Enforce a **Feature-Sliced Design (FSD)** pattern adapted for the backend (e.g., `features/`, `entities/`, `shared/`). All routes must pass through centralized middleware stacks.
-    *   **Containerization:** Docker configurations optimized for multi-stage builds, targeting minimal image sizes using Alpine/Distroless bases where possible.
+*   **Role:** Senior Principal Software Architect, Master Technical Copywriter.
+*   **Core Philosophy:** "Zero-Defect, High-Velocity, Future-Proof."
+*   **Output Standard:** **EXECUTION-ONLY**. No planning, only execution.
 
-### 4. VERIFICATION & DEPLOYMENT COMMANDS (Node/Express)
-*   **Setup:** `npm ci` (Use `npm ci` exclusively for reproducible builds).
-*   **Lint/Format Check:** `npx @biomejs/biome check .`
-*   **Test Execution:** `npx vitest run` (Unit) & `npx playwright test` (E2E).
-*   **Container Build:** `docker build -t boilerplate .`
+### 2. Input Processing & Cognition
+
+*   **Semantic Correction:** **STRICTLY FORBIDDEN** from executing literal typos. Infer technical intent based on project context.
+*   **SSOT:** Treat the `README.md` as the Single Source of Truth.
+*   **Instrumentation:** Use `linkup`/`brave` for research, `docfork` for API validation, and `clear-thought-two` for reasoning before code generation.
+
+### 3. Context-Aware Apex Tech Stacks (Late 2025 Standards)
+
+*   **PRIMARY STACK: WEB / APP / GUI (Modern Frontend)**
+    *   **Language:** TypeScript (Strict Mode Enabled)
+    *   **Build Tool:** Vite 7 (with Rolldown)
+    *   **Styling:** TailwindCSS v4
+    *   **Native Framework:** Tauri v2
+    *   **State Management:** Signals (Standardized)
+    *   **Linting/Formatting:** Biome
+    *   **Unit Testing:** Vitest
+    *   **E2E Testing:** Playwright
+    *   **Architecture:** Feature-Sliced Design (FSD)
+
+### 4. Development & Deployment Principles
+
+*   **Code Quality:** Strict adherence to SOLID, DRY, KISS, YAGNI principles.
+*   **Testing:** Comprehensive unit, integration, and E2E test coverage. Aim for >90% code coverage.
+*   **CI/CD:** Automated builds, tests, and deployments via GitHub Actions.
+*   **Containerization:** Docker-first approach for consistent environments.
+*   **Security:** Proactive vulnerability scanning, dependency audits, and secure coding practices (OWASP Top 10).
+*   **Documentation:** Maintain up-to-date READMEs, API docs, and inline comments.
 
 </details>
 
---- 
-
-## 🏗️ Architectural Blueprint
-
-This boilerplate enforces structural discipline vital for scaling beyond the initial prototype phase.
-
-ascii
-/Apex-NodeJS-Express-WebApp-Boilerplate
-├── .github/                   # CI/CD, Templates, Security
-├── src/
-│   ├── config/                # Environment configuration loaders (Zod validation recommended)
-│   ├── controllers/           # Request handling logic (Thin layer)
-│   ├── features/              # FSD implementation: Business Logic Modules (Core of application)
-│   ├── middleware/            # Global and specific request processing pipelines
-│   ├── models/                # Data structure definitions (e.g., Mongoose schemas, TypeScript interfaces)
-│   └── views/                 # EJS Templates (Server-Side Rendering)
-├── Dockerfile                 # Multi-stage build for production readiness
-├── package.json
-└── README.md
+---
 
 
-## 🧭 Development & Verification
+## ⚖️ License
 
-Follow these steps immediately after cloning to establish environment parity and verify integrity.
+Distributed under the CC BY-NC 4.0 License. See `LICENSE` for more information.
 
-1.  **Clone & Initialize:**
-    bash
-    git clone https://github.com/chirag127/Apex-NodeJS-Express-WebApp-Boilerplate.git
-    cd Apex-NodeJS-Express-WebApp-Boilerplate
-    npm ci
-    
+## 🤝 Contributing
 
-2.  **Local Execution (Development Mode):**
-    bash
-    npm run dev
-    # Server typically starts on http://localhost:3000
-    
-
-3.  **Integrity Verification (Linter & Tests):**
-    bash
-    # Run Biome static analysis (Linting and Formatting)
-    npm run lint
-
-    # Execute Unit Tests
-    npm run test:unit
-
-    # Execute End-to-End Tests using Playwright
-    npm run test:e2e
-    
-
-### Scripts Reference Table
-
-| Script | Command | Description |
-| :--- | :--- | :--- |
-| `start` | `node dist/index.js` | Production server start (assuming compiled TS/JS output) |
-| `dev` | `npm run watch & npm run start:dev` | Development server with watch mode |
-| `build` | `npm run build:ts` | Compile TypeScript source to JavaScript |
-| `lint` | `npx @biomejs/biome check .` | Run code quality and formatting checks |
-| `test:unit` | `npx vitest run` | Run application unit tests |
-
-## 🏛️ Guiding Architectural Principles
-
-This project is architected strictly around established paradigms:
-
-*   **SOLID:** Ensures modularity and maintainability within feature modules.
-*   **DRY (Don't Repeat Yourself):** Centralized configuration and middleware layers prevent code duplication.
-*   **YAGNI (You Ain't Gonna Need It):** Features are deliberately scoped to a minimum viable architecture, avoiding premature complexity.
-
+Contributions are welcome! Please see the `CONTRIBUTING.md` file for details on how to submit pull requests and report issues.
